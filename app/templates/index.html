@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-16">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="post">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="asset_name" placeholder="Asset Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="format" placeholder="File Format" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="source" placeholder="File Source" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="full_description" cols="100"
+                                      placeholder="Full Description of Item" required></textarea><!--change placeholder -->
+                        </div>
+
+                        <form action="/upload" method="post" enctype="multipart/form-data" >
+                          <input type="submit" value="Add To Collection" class="btn btn-primary">
+                            <span class="btn btn-default btn-file">
+                            <input type="file" name="image">
+                            </span>
+                        </form>
+                    </form>
+                    <p><font color="red">Please Fill Out Details of The Asset Before Hitting Add To Collection</font></p>
+
+                    <br>
+                    <!--<span class="navbar-text"> Machine Learning with
+                      <!--  <a href="https://sightengine.com/">Sightengine</a> TO Continue work on the AI aided image processing functionality
+                    </span>-->
+                </div>
+            </div>
+        </div>{% endblock %}

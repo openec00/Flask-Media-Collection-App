@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+        <div class="col-md-16">
+          <div class="card">
+              <div class="card-body">
+              <table class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                      <th>Id_No</th>
+                      <th>Asset Name</th>
+                      <th>Format</th>
+                      <th>Source</th>
+                      <th>Full Description</th>
+                      <th>Controls</th>
+                  </tr>
+                  </thead>
+
+                <tbody>
+                {% for entry in entries %}
+                <tr>
+                    <td>{{ entry.id_no }}</td>
+                    <td><strong>{{ entry.asset_name }}</strong></td>
+                    <td>{{ entry.format }}</td>
+                    <td>{{ entry.source }}</td>
+                    <td>{{ entry.full_description }}</td>
+                    <td>
+                        <a class="{{ 'btn btn-success' if entry.status else 'btn btn-dark'}}"
+                           href="/turn/{{ entry.id_no }}">
+                            Turn Status
+                        </a>
+                        <a class="btn btn-danger"
+                           href="/delete/{{ entry.id_no }}">
+                            Delete
+                        </a>
+                        <a class="btn btn-info"
+                           href="/update/{{ entry.id_no }}">
+                            Edit
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
