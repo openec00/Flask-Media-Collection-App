@@ -2,7 +2,7 @@
 
  This is an application that is built on the popular Flask framework for Python
 
- ![alt text](https://raw.githubusercontent.com/openec00/Flask-Multi-Purpose-Media-Collection-App/master/app/static/images/Flask-Multi-Purpose-Media-Collection-App)
+ ![alt text](Flask-Multi-Purpose-Media-Collection-App/Demo_2_Flask_Media_Collection_App_ 2019-03-18 00-11-52.png "App Demo")
 
 ### To Install (Linux Distro)
 
