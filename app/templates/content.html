@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="container">
-        <div class="col-md-16">
+        <div class="col-md-8 col-md-offset-2">
           <div class="card">
               <div class="card-body">
               <table class="table table-bordered table-hover">
@@ -27,10 +27,10 @@
                     <td>{{ entry.source }}</td>
                     <td>{{ entry.full_description }}</td>
                     <td>
-                        <a class="{{ 'btn btn-success' if entry.status else 'btn btn-dark'}}"
+                        <!--<a class="{{ 'btn btn-success' if entry.status else 'btn btn-dark'}}"
                            href="/turn/{{ entry.id_no }}">
                             Turn Status
-                        </a>
+                        </a>-->
                         <a class="btn btn-danger"
                            href="/delete/{{ entry.id_no }}">
                             Delete

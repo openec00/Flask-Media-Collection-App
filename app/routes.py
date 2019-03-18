@@ -2,6 +2,7 @@ import os
 from flask import render_template, redirect, request
 from app import app, db
 from app.models import Entry
+from werkzeug import secure_filename
 
 UPLOAD_FOLDER = os.path.basename('uploads')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -9,17 +10,22 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route('/')
 @app.route('/index')
 def index():
-    entries = Entry.query.all() #CHANGE entries table name for flask migration arg
+    entries = Entry.query.all()
     return render_template('index.html', entries=entries)
 
-@app.route('/upload', methods=['POST'])
-def upload_file():
-    file = request.files['image']
-    f = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+@app.route('/upload')
+def upload():
+    return render_template('upload.html')
 
-    # add your custom code to check that the uploaded file is a valid image and not a malicious file (out-of-scope for this post)
-    file.save(f)
-    return render_template('index.html')
+
+@app.route('/uploader', methods = [ 'GET', 'POST' ])
+def uploader_file():
+    if request.method == 'POST':
+        file = request.files['file']
+        f = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+        file.save(f)
+        return render_template('upload.html')
+
 
 @app.route('/content')
 def content():
@@ -47,8 +53,7 @@ def updateRoute(id_no):
         if entry:
             return render_template('update.html', entry=entry)
 
-#The return here suggests that after the update function is invoked it returns to index
-#CHANGE this so it redirects back to '/content'
+#CHECK FUNCTION
 @app.route('/update', methods=['POST'])
 def update():
     if not id_no or id_no != 0:
@@ -68,7 +73,7 @@ def delete(id_no):
         return redirect('/')
 
 
-
+#CHECK FUNCTION - NOT USED
 @app.route('/turn/<int:id_no>')
 def turn(id_no):
     if not id_no or id_no != 0:

@@ -1,22 +1,24 @@
-# A Flask Audio-Visual File Collection Application
+# A Flask Multi-Purpose Media Collection Application
 
  This is an application that is built on the popular Flask framework for Python
+
+ ![alt text](https://raw.githubusercontent.com/openec00/Flask-Multi-Purpose-Media-Collection-App/master/app/static/images/Flask-Multi-Purpose-Media-Collection-App)
 
 ### To Install (Linux Distro)
 
 open a linux terminal
 
 ```
-git clone https://github.com/
+git clone https://github.com/openec00/Flask-Multi-Purpose-Media-Collection-App.git
 ```
 ```
-cd av-collection-app/
+cd flask-media-collection-app/
 ```
 ```
-python3 -m venv venv
+python3 -m venv flask_venv
 ```
 ```
-source venv/bin/activate
+source flask_venv/bin/activate
 ```
 ```
 pip install --upgrade pip
@@ -25,7 +27,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 ```
-export FLASK_APP=av-collection-app.py
+export FLASK_APP=flask-media-collection-app.py
 ```
 ```
 Create a database :
@@ -40,7 +42,7 @@ Run initial migration for database version control:
 flask db upgrade
 ```
 ```
-Run application - NOTE FLASK_APP=av-collection-app.py entry should be made in.flaskenv or export the variable in your local environment:
+Run application - NOTE FLASK_APP=flask-media--collection-app.py entry should be made in.flaskenv or export the variable in your local environment:
 flask run
 ```
 

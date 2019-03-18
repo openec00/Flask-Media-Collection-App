@@ -4,10 +4,11 @@
 <div class="container">
     <div class="row">
 
-        <div class="col-md-16">
+        <div class="col-md-8 col-md-offset-2">
             <div class="card">
                 <div class="card-body">
                     <form action="/add" method="post">
+
                         <div class="form-group">
                             <input class="form-control" type="text" name="asset_name" placeholder="Asset Name" required>
                         </div>
@@ -21,17 +22,23 @@
                             <textarea class="form-control" name="full_description" cols="100"
                                       placeholder="Full Description of Item" required></textarea><!--change placeholder -->
                         </div>
+                        <br>
 
-                        <form action="/upload" method="post" enctype="multipart/form-data" >
                           <input type="submit" value="Add To Collection" class="btn btn-primary">
-                            <span class="btn btn-default btn-file">
-                            <input type="file" name="image">
-                            </span>
-                        </form>
-                    </form>
-                    <p><font color="red">Please Fill Out Details of The Asset Before Hitting Add To Collection</font></p>
 
+
+                    </form>
                     <br>
+
+                    <h3 class="h3"><font color="whitesmoke">
+                      <ul>
+                        <li>Go To Add File. </li>
+                        <li>Fill This Form.</li>
+                        <li> Add To Collection.</li></ul>
+                      </font>
+                    </h3>
+
+
                     <!--<span class="navbar-text"> Machine Learning with
                       <!--  <a href="https://sightengine.com/">Sightengine</a> TO Continue work on the AI aided image processing functionality
                     </span>-->
