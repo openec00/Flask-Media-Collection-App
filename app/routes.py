@@ -85,6 +85,4 @@ def turn(id_no):
 
 
 
-# @app.errorhandler(Exception)
-# def error_page(e):
-#     return "of the jedi"
+
