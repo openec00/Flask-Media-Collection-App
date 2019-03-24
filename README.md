@@ -27,7 +27,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 ```
-export FLASK_APP=flask-media-collection-app.py
+export FLASK_APP=flask-media-collection-app.py (or create a .flaskenv file)
 ```
 ```
 Create a database :
@@ -42,7 +42,8 @@ Run initial migration for database version control:
 flask db upgrade
 ```
 ```
-Run application - NOTE FLASK_APP=flask-media--collection-app.py entry should be made in.flaskenv or export the variable in your local environment:
+Run application - NOTE FLASK_APP=flask-media-collection-app.py entry should be made in.flaskenv or export the variable in your local environment as seen in the steps above:
+
 flask run
 ```
 
