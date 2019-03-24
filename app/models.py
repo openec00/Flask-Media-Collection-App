@@ -1,7 +1,5 @@
 from app import db
 
-#CHANGE db input parameters - reflect in routes.py view functions
-#Go to routes.py and change view functions as well
 class Entry(db.Model):
     id_no = db.Column(db.Integer, primary_key=True)
     asset_name = db.Column(db.String(64), index=True, nullable=False)
